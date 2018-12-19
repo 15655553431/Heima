@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<objects xmlns="http://www.springframework.net">
+
+
+  <!--注意下面两个注入，只能保留一个-->
+  <!--配置common层CacheHelper的public static ICacheWriter CacheWriter { get; set; }属性注入。这里注入的是MemcacheWriter-->
+  <!--<object name="CacheWriter" type="Heima8.OA.Common.Cache.MemcacheWriter, Heima8.OA.Common" singleton="false" >
+  </object>-->
+
+  <!--如果使用单机缓存，取消下面的注释。配置common层CacheHelper的public static ICacheWriter CacheWriter { get; set; }属性注入。这里注入的是本地缓存-->
+  <object name="CacheWriter" type="Heima8.OA.Common.Cache.HttpRuntimeCacheWriter, Heima8.OA.Common" singleton="false" >
+  </object>
+  
+  <!--给类的属性做注入,用于cachehelper，代替的session缓存的机制-->
+  <object name="CacheHelper" type="Heima8.OA.Common.Cache.CacheHelper, Heima8.OA.Common" singleton="false" >
+    <property name="CacheWriter" ref="CacheWriter" />
+  </object>
+  
+  
+  
+
+</objects>

@@ -1,0 +1,30 @@
+﻿@model Heima8.OA.Model.UserInfo
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <fieldset>
+        <legend>UserInfo</legend>
+    
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.UName)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.UName)
+        </div>
+    </fieldset>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

@@ -1,0 +1,61 @@
+﻿@model Heima8.OA.Model.UserInfo
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>UserInfo</legend>
+
+        @Html.HiddenFor(model => model.ID)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.UName)
+            @Html.ValidationMessageFor(model => model.UName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Pwd)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Pwd)
+            @Html.ValidationMessageFor(model => model.Pwd)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ShowName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ShowName)
+            @Html.ValidationMessageFor(model => model.ShowName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DelFlag)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DelFlag)
+            @Html.ValidationMessageFor(model => model.DelFlag)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

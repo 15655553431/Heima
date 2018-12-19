@@ -1,0 +1,43 @@
+﻿@model Heima8.OA.Model.UserInfo
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>UserInfo</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Pwd)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Pwd)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ShowName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ShowName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DelFlag)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DelFlag)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
